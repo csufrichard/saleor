@@ -119,6 +119,8 @@ def test_applicable_shipping_methods(shipping_zone):
     result = ShippingMethod.objects.applicable_shipping_methods(
         price=money(5), weight=Weight(kg=5), country_code="PL"
     )
+    
+    price_method = None
     assert price_method in result
     assert weight_method in result
 
